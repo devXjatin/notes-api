@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const user = require("./user")
 
 const noteSchema = mongoose.Schema({
-    titele:{
+    title:{
         type:String,
         required: true
     },
