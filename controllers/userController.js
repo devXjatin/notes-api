@@ -6,7 +6,7 @@ exports.signup = async (req, res) => {
     const { username, email, password } = req.body;
 
     //find user if exist or not
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ email: email });
 
     //return if user not exist
     if (user) {
@@ -42,7 +42,7 @@ exports.signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    let user = await User.findOne({ email }).select("+password");
+    let user = await User.findOne({ email:email }).select("+password");
 
     //check user exist or not
     if (!user) {
