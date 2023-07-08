@@ -26,7 +26,7 @@ exports.signup = async (req, res) => {
 
     res.status(201).json({
       user: user,
-      token: token,
+      token: "Bearer "+token,
     });
   } catch (err) {
     res.status(500).json({
@@ -64,7 +64,7 @@ exports.signIn = async (req, res) => {
 
     res.status(201).json({
       user: user,
-      token: token,
+      token: "Bearer "+token,
     });
   } catch (err) {
     res.status(500).json({
