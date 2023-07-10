@@ -10,7 +10,7 @@ let opts ={
 }
 
 passport.use(new JWTStrategy(opts, function(jwt_payload, done){
- User.findOne({id:jwt_payload.id}, function(err,user){
+ User.findOne({_id:jwt_payload.id}, function(err,user){
         if(err){
             console.log('Error in finding user from jwt', err)
             return done(err, false);

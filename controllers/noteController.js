@@ -27,6 +27,7 @@ exports.createNote = async(req, res)=>{
 //get all notes method
 exports.getAllNotes = async(req, res)=>{
     try {
+        console.log("========", req.user.id)
        
         const allNotes = await Note.find({userId: req.user.id})
         res.status(200).json(allNotes)
