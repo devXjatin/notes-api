@@ -12,7 +12,7 @@ const note = require("../models/note");
 //get All notes route
 noteRouter
   .route("/notes")
-  .get(passport.authenticate("jwt", { session: false }), getAllNotes);
+  .get( getAllNotes);
 
 //create note route
 noteRouter
